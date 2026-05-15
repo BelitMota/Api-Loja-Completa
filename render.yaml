@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: api-loja-flask-monolitica
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: JWT_SECRET_KEY
+        sync: false
